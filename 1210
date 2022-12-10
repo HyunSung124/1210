@@ -1,0 +1,13 @@
+def F(s, c, d):
+    d += s.count('0')
+    if s == '1':
+        return [c, d]
+    else:
+        l = bin(s.count('1'))[2:]
+        c += 1
+        return F(l, c, d)
+
+def solution(s):
+    return F(s, 0, 0)
+s = '110010101001'
+print(solution(s))
